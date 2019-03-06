@@ -12,7 +12,6 @@ func main() {
 	e.Logger.Fatal(e.Start(":1323"))
 }
 
-//readiness check.
 func readyCheck(c echo.Context) error {
 	return c.String(http.StatusOK, "Ready!")
 }
