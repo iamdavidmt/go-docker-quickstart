@@ -1,0 +1,1 @@
+# Docker scaffold for a go/echo project

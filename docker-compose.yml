@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  go-service:
+    build: go-service/
+    ports:
+      - 1323:1323
+    volumes:
+      - ./go-service:/go/src/server
