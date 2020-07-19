@@ -1,5 +1,7 @@
 FROM alpine:3.9
 
+RUN apk update && apk add --no-cache musl-dev gcc build-base
+
 RUN apk add --no-cache \
 		ca-certificates
 
@@ -47,6 +49,7 @@ RUN set -eux; \
 
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
+ENV GOROOT /usr/local/go
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR /go/src/server
